@@ -12,6 +12,7 @@ begin
     spec.email = "nirvdrum@gmail.com"
     spec.license = 'MIT'
     spec.add_development_dependency 'minitest'
+    spec.add_dependency 'open4'
   end
   Jeweler::GemcutterTasks.new
   
