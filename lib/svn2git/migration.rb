@@ -56,7 +56,7 @@ module Svn2Git
       options[:password] = nil
       options[:rebasebranch] = false
 
-      if File.exists?(File.expand_path(DEFAULT_AUTHORS_FILE))
+      if File.exist?(File.expand_path(DEFAULT_AUTHORS_FILE))
         options[:authors] = DEFAULT_AUTHORS_FILE
       end
 
@@ -349,7 +349,7 @@ module Svn2Git
         if @cannot_setup_tracking_information
           run_command(Svn2Git::Migration.checkout_svn_branch(branch))
         else
-          status = run_command("git branch --track \"#{branch}\" \"remotes/svn/#{branch}\"", false)
+          status = run_command("git branch \"#{branch}\" \"remotes/svn/#{branch}\"", false)
 
           # As of git 1.8.3.2, tracking information cannot be set up for remote SVN branches:
           # http://git.661346.n2.nabble.com/git-svn-Use-prefix-by-default-td7594288.html#a7597159
