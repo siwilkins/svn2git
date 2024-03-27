@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<minitest>, [">= 0"])
+    s.add_dependency(%q<open4>, [">= 0"])
   end
 end
 
