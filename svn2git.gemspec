@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "svn2git"
-  s.version = "2.4.1"
+  s.version = "2.4.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.5.1"
   s.summary = "A tool for migrating svn projects to git"
 
+  s.add_dependency("open4")
   if s.respond_to? :specification_version then
     s.specification_version = 4
 
@@ -44,11 +45,9 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<minitest>, [">= 0"])
     else
       s.add_dependency(%q<minitest>, [">= 0"])
-      s.add_dependency(%q<open4>, [">= 0"])
     end
   else
     s.add_dependency(%q<minitest>, [">= 0"])
-    s.add_dependency(%q<open4>, [">= 0"])
   end
 end
 
