@@ -196,7 +196,6 @@ module Svn2Git
 
         # Add each component to the command that was passed as an argument.
         cmd += "--username='#{username}' " unless username.nil?
-        cmd += "--password='#{password}' " unless password.nil?
         cmd += "--no-metadata " unless metadata
         if nominimizeurl
           cmd += "--no-minimize-url "
