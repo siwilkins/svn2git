@@ -219,7 +219,7 @@ module Svn2Git
         end
 
         cmd += @url
-        cmd = "echo #{password}\n#{password}\n | #{cmd}" if password
+        cmd = "echo \"#{password}\n#{password}\n\" | #{cmd}" if password
 
         run_command(cmd, true, true)
       end
