@@ -184,7 +184,6 @@ module Svn2Git
         # Non-standard repository layout.  The repository root is effectively 'trunk.'
         cmd = "git svn init --prefix=svn/ "
         cmd += "--username='#{username}' " unless username.nil?
-        cmd += "--password='#{password}' " unless password.nil?
         cmd += "--no-metadata " unless metadata
         if nominimizeurl
           cmd += "--no-minimize-url "
@@ -221,6 +220,7 @@ module Svn2Git
         end
 
         cmd += @url
+        cmd = "echo #{password} | #{cmd}" if password
 
         run_command(cmd, true, true)
       end
